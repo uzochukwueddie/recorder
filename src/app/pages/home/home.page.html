@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-item>
+    <span>Recorder</span>
+  </ion-item>
+
+  <ion-card>
+    <div class="outer-circle card-circle">
+      <div class="inner-circle card-circle">
+        <ion-icon class="mic-icon" *ngIf="!hasStarted" name="mic"></ion-icon>
+        <p class="timer" *ngIf="hasStarted">
+          {{mins}}:{{secs}}:{{cents}}
+        </p>
+      </div>
+    </div>
+  </ion-card>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button class="recordings" (click)="recordings()">
+        <ion-label>Recordings</ion-label>
+        <ion-icon name="menu"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="recordSound()" [disabled]="hasStarted">
+        <div class="outer circle">
+          <div class="inner circle">
+            <ion-icon class="radio-icon" name="radio-button-on"></ion-icon>
+          </div>
+        </div>
+      </ion-tab-button>
+
+      <ion-tab-button class="recordings" (click)="stopRecord()" [disabled]="!hasStarted">
+        <ion-label>Stop</ion-label>
+        <ion-icon name="square-outline"></ion-icon>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>
+

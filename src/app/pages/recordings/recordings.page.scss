@@ -1,0 +1,53 @@
+ion-content {
+    --background: var(--ion-color-primary-contrast);
+
+    ion-list {
+        padding: 0;
+        margin: 0;
+    
+        .play {
+            color: #4aa1f3;
+        }
+    
+        .pause {
+            color: red;
+        }
+    
+        ion-label {
+            h2 {
+                font-size: 14px;
+                padding-bottom: 1px;
+            }
+    
+            ion-range {
+                height: 30px;
+                margin-left: -6px;
+            }
+        }
+    
+        .hidePause, .hideResume {
+            display: none !important;
+        }
+    
+        .showPause, .showResume {
+            display: block !important;
+        }
+        
+        .timer {
+            display: flex;
+    
+            p {
+                font-size: 12px;
+            }
+    
+            .p1 {
+                width: 46px;
+                padding-left: 2px;
+            }
+    
+            .p2 {
+                margin-left: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="stopPlaying()">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recordings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="records.length > 0">
+    <ion-item-sliding *ngFor="let record of records">
+      <ion-item lines="inset" >
+        <ion-icon name="mic" slot="start"></ion-icon>
+        <ion-label>
+          <h2>{{record.name}}</h2>
+          <p>{{record.date}}</p>
+          <ng-container *ngIf="filename === record.name && !isComplete">
+            <ion-range [(ngModel)]="steps" step="steps" min="0"
+              max="{{changeDuratioToSeconds(record.duration)}}"></ion-range>
+            <div class="timer">
+              <p class="p1">{{mins}}:{{secs}}</p>
+              <p class="p2">{{record.duration}}</p> 
+            </div>
+          </ng-container>
+        </ion-label>
+        <ion-icon 
+        (click)="playAudio(record)"
+        *ngIf="filename !== record.name"
+        class="play" 
+        name="play-circle" 
+        slot="end"></ion-icon>
+        <ion-icon 
+        (click)="pauseAudio(record)"
+        class="pause" 
+        [ngClass]="{'hidePause': isPaused, 'showPause': !isPaused}"
+        name="pause"
+        *ngIf="filename === record.name" 
+        slot="end"
+        ></ion-icon>
+        <ion-icon 
+        (click)="resumeAudio(record)"
+        class="play" 
+        [ngClass]="{'hideResume': !isPaused, 'showResume': isPaused}"
+        name="play-circle"
+        *ngIf="filename === record.name" 
+        slot="end"
+        ></ion-icon>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="deleteAudio(record)">
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+</ion-content>
+  
+  

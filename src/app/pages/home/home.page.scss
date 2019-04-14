@@ -1,0 +1,106 @@
+ion-content {
+    --background: var(--ion-color-primary-contrast);
+
+    ion-tab-bar {
+        --border: var(--ion-color-primary-contrast);
+        height: 110px;
+    }
+
+    ion-tab-button {
+        --ripple-color: white;
+    }
+    
+    ion-item {
+        --border-color: var(--ion-color-primary-contrast);
+        text-align: center;
+        span {
+            margin: 0 auto;
+            padding-top: 5px;
+            font-size: 25px;
+        }
+    }
+    
+    ion-label {
+        color: #989aa2 !important;
+        font-size: 10px;
+    }
+
+    ion-card {
+        top: 20%;
+        box-shadow: none;
+    }
+
+    .recordings {
+        --color: #4aa1f3;
+    }
+    
+    .circle { 
+        border-radius: 50%; 
+    }
+    
+    .outer {
+        background: linear-gradient(to right, #1E5799 0%,#7DB9E8 58%,#7DB9E8 100%); 
+        width: 80px;
+        height: 80px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+    
+    .inner {
+        background-color:white;
+        top: 3%; left:3%;
+        width: 94%;
+        height: 94%;
+        position: relative;
+    }
+    
+    .radio-icon {
+        color: red !important;
+        width: 20px;
+        height: 20px;
+        padding: 27px;
+        margin-left: 2px;
+    }
+    
+    .card-circle { 
+        border-radius: 50%; 
+    }
+    
+    .outer-circle {
+        background: linear-gradient(to right, #1E5799 0%,#7DB9E8 58%,#7DB9E8 100%); 
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .inner-circle {
+        background-color:white;
+        top: 3%; left:3%;
+        width: 94%;
+        height: 94%;
+        position: relative;
+    }
+    
+    .mic-icon {
+        width: 50px;
+        height: 50px;
+        padding: 67px;
+        margin-left: 2px;
+    }
+    
+     p.timer {
+        padding: 67px;
+        padding-top: 85px !important;
+        margin: 0px 0px 0px -20px !important;
+        width: 250px !important;
+        height: auto !important;
+        font-size: 25px;
+    }
+}
+
+
+
+
+
+
